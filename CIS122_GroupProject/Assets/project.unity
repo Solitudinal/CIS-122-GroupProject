@@ -159,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849855817}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2262,6 +2262,22 @@ PrefabInstance:
     - target: {fileID: 1439038214088469783, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745593686633888017, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745593686633888017, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745593686633888017, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 131639948, guid: 4aaf3254f3946234fa425e9b567eb4b1, type: 3}
+    - target: {fileID: 4745593686633888017, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6071853238823835576, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
       propertyPath: speed
