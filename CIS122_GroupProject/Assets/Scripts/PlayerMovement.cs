@@ -1,31 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int speed = 10;
-    private Rigidbody2D characterBody;
-    private Vector2 velocity;
-    private Vector2 inputMovement;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int speed = 5;
+    private Vector2 movement;
+    private Rigidbody2D rb;
+    private Animator animator;
+
+    private void Awake()
     {
-        // velocity is set to be speed in x and y direction
-        velocity = new Vector2(speed, speed);
-        characterBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnMovement(InputValue value)
     {
-        inputMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
+        movement = value.Get<Vector2>();
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("Xinput", movement.x);
+            animator.SetFloat("Yinput", movement.y);
+        }
+            
     }
 
     private void FixedUpdate()
     {
-        Vector2 delta = inputMovement * velocity * Time.deltaTime;
-        Vector2 newPosition = characterBody.position + delta; characterBody.MovePosition(newPosition);
+        // option 1 - stiff movement
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        // option 2 for movement
+        /*
+        if (movement.x != 0 || movement.y != 0)
+        {
+            rb.velocity = movement * speed;
+        }
+        */
+
+        // option 3 for movement
+        //rb.AddForce(movement * speed);
     }
 }
