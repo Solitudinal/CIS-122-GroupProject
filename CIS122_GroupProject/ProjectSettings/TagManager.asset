@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: middle
+  - name: Collision layer (hide all collision tilemaps)
+    uniqueID: 246206389
+    locked: 0
+  - name: Map layer?
     uniqueID: 2497975147
+    locked: 0
+  - name: Player (should be in front of grond and wall)
+    uniqueID: 4189911033
+    locked: 0
+  - name: Bottom layer (character should be behind them to represent depth)
+    uniqueID: 2091915685
     locked: 0
