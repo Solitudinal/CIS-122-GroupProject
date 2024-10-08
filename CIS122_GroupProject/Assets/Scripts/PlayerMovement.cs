@@ -23,6 +23,12 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Xinput", movement.x);
             animator.SetFloat("Yinput", movement.y);
+            animator.SetBool("IsWalking", true);
+
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
         }
             
     }

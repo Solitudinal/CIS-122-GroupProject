@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800a087342240074daabebe02b9c4dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
 --- !u!50 &1439038214088469783
 Rigidbody2D:
   serializedVersion: 4
@@ -236,13 +236,13 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 000000006b13e494
   m_ShapePath:
-  - {x: -0.25310856, y: -0.5870005, z: 0}
-  - {x: -0.25429118, y: -0.6251074, z: 0}
-  - {x: 0.26436716, y: -0.62484574, z: 0}
-  - {x: 0.26151904, y: -0.58311564, z: 0}
-  m_ShapePathHash: -1490853114
+  - {x: -0.23021483, y: -0.49288195, z: 0}
+  - {x: -0.24157244, y: -0.52081394, z: 0}
+  - {x: 0.27708584, y: -0.5103773, z: 0}
+  - {x: 0.2767815, y: -0.48390955, z: 0}
+  m_ShapePathHash: 470984445
   m_Mesh: {fileID: 0}
   m_InstanceId: -1302
   m_LocalBounds:
-    m_Center: {x: 0.005037993, y: -0.60411155, z: 0}
-    m_Extent: {x: 0.25932917, y: 0.020995885, z: 0}
+    m_Center: {x: 0.0177567, y: -0.5023618, z: 0}
+    m_Extent: {x: 0.25932914, y: 0.018452197, z: 0}
