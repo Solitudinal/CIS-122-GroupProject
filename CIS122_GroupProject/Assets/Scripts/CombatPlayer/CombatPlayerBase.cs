@@ -1,3 +1,6 @@
+// Written by Philip Jacobson
+// 10/5/2024
+
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Enumeration;
@@ -5,6 +8,8 @@ using UnityEngine;
 
 // Allows easy creation of Player objects from Project window
 [CreateAssetMenu(fileName = "Player", menuName = "Player/Create new player")]
+
+// Inheriting from ScriptableObject allows this script to be used independently from game objects
 public class CombatPlayerBase : ScriptableObject
 {
     [SerializeField] string name;
@@ -13,6 +18,7 @@ public class CombatPlayerBase : ScriptableObject
     [SerializeField] string description;
 
     [SerializeField] Sprite backSprite;
+    [SerializeField] Sprite frontSprite;
 
     // Stores information about which department-specific powers player should have
     [SerializeField] PlayerForm form;
@@ -24,6 +30,8 @@ public class CombatPlayerBase : ScriptableObject
     [SerializeField] int spAttack;
     [SerializeField] int spDefense;
     [SerializeField] int speed;
+
+    [SerializeField] List<LearnableAbility> learnableAbilities;
 
     // Gets
     public string Name
@@ -39,6 +47,11 @@ public class CombatPlayerBase : ScriptableObject
     public Sprite BackSprite
     {
         get { return this.backSprite; }
+    }
+
+    public Sprite FrontSprite
+    {
+        get { return this.frontSprite; }
     }
 
     public PlayerForm Form
@@ -74,6 +87,29 @@ public class CombatPlayerBase : ScriptableObject
     public int Speed
     {
         get { return this.speed; }
+    }
+
+    public List<LearnableAbility> LearnableAbilities
+    {
+        get { return this.learnableAbilities; }
+    }
+
+    // Class for abilities that player gains at specific levels
+    [System.Serializable]
+    public class LearnableAbility
+    {
+        [SerializeField] AbilityBase abilityBase;
+        [SerializeField] int level;
+
+        public AbilityBase Base
+        {
+            get { return this.abilityBase; }
+        }
+
+        public int Level
+        {
+            get { return this.level; }
+        }
     }
 
     // Enum stores references to department-specific powers that player has earned
