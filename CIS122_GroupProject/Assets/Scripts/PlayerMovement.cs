@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             
     }
 
+
     private void FixedUpdate()
     {
         // option 1 - stiff movement
