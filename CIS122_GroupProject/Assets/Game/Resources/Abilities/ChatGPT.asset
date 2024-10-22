@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f0b84a2430bd04ca83f6effd83a585, type: 3}
   m_Name: ChatGPT
   m_EditorClassIdentifier: 
-  name: ChatGPT
+  name: Consult AI
   description: Increases player's Attack, but lowers Accuracy.
   form: 0
   power: 0

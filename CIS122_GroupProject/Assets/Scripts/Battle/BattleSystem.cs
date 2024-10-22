@@ -143,5 +143,7 @@ public class BattleSystem : MonoBehaviour
         }
 
         dialogueBox.UpdateAbilitySelection(currentAbility, playerUnit.Player.Abilities[currentAbility]);
+
+
     }
 }
