@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Female MC
   description: 
-  backSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  backSprite: {fileID: 21300000, guid: 4c83193d1d0bc8a4ca575e1a5c93b470, type: 3}
   frontSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   form: 0
   maxHp: 45
