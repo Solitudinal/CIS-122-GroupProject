@@ -20,11 +20,13 @@ public class BattleUnit : MonoBehaviour
 
     Image image;
     Vector2 originalPosition;
+    Color originalColor;
 
     private void Awake()
     {
         image = GetComponent<Image>();
         originalPosition = image.transform.localPosition;
+        originalColor = image.color;
     }
 
     public void Setup()
@@ -80,5 +82,25 @@ public class BattleUnit : MonoBehaviour
 
         // A return to the original position is appended to the second and final part of animation sequence
         sequence.Append(image.transform.DOLocalMoveX(originalPosition.x, 0.25f));
+    }
+
+    // Method for playing hit animations for player/enemy
+    public void PlayHitAnimation()
+    {
+        var sequence = DOTween.Sequence();
+
+        // This animation sequence makes the battle units briefly flash red before returning to orginial color
+        sequence.Append(image.DOColor(Color.red, 0.1f));
+        sequence.Append(image.DOColor(originalColor, 0.1f));
+    }
+
+    // Method for playing animation upon player/enemy defeat
+    public void PlayDefeatAnimation()
+    {
+        var sequence = DOTween.Sequence();
+
+        // When defeated, player/enemy will move 150 y-units down while fading to invisibility
+        sequence.Append(image.transform.DOLocalMoveY(originalPosition.y - 150, 0.5f));
+        sequence.Join(image.DOFade(0f, 0.5f)); // Join() allows sequenced animations to play simultaneously         
     }
 }

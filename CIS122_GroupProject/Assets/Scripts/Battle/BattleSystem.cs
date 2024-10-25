@@ -68,20 +68,20 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.Busy;  
 
         var ability = playerUnit.Player.Abilities[currentAbility];
-
         yield return dialogueBox.TypeDialogue($"{playerUnit.Player.Base.Name} used {ability.Base.Name}!");
 
         playerUnit.PlayAttackAnimation();
-
         yield return new WaitForSeconds(1f);
 
-        bool isDefeated = enemyUnit.Player.TakeDamage(ability, playerUnit.Player);
+        enemyUnit.PlayHitAnimation();
 
+        bool isDefeated = enemyUnit.Player.TakeDamage(ability, playerUnit.Player);
         yield return enemyHud.UpdateHP(enemyUnit.Player);
 
         if (isDefeated)
         {
             yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} has been vanquished!");
+            enemyUnit.PlayDefeatAnimation();
         }
         else
         {
@@ -95,20 +95,20 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.EnemyTurn;
 
         var ability = enemyUnit.Player.GetRandomAbility();
-
         yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} used {ability.Base.Name}!");
 
         enemyUnit.PlayAttackAnimation();
-
         yield return new WaitForSeconds(1f);
 
-        bool isDefeated = playerUnit.Player.TakeDamage(ability, enemyUnit.Player);
+        playerUnit.PlayHitAnimation();
 
+        bool isDefeated = playerUnit.Player.TakeDamage(ability, enemyUnit.Player);
         yield return playerHud.UpdateHP(playerUnit.Player);
 
         if (isDefeated)
         {
             yield return dialogueBox.TypeDialogue($"{playerUnit.Player.Base.Name} has been vanquished!");
+            playerUnit.PlayDefeatAnimation();
         }
         else
         {
