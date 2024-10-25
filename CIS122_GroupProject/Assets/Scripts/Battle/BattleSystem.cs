@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BattleState { Start, PlayerAction, PlayerAbility, EnemyAbility, Busy}
+public enum BattleState { Start, PlayerAction, PlayerAbility, EnemyTurn, Busy}
 
 // This script sets up the battle scene using information from both the player and enemy unit objects
 public class BattleSystem : MonoBehaviour
@@ -17,6 +17,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleDialogueBox dialogueBox;
 
     BattleState state;
+
     int currentAction;
     int currentAbility;
 
@@ -45,16 +46,68 @@ public class BattleSystem : MonoBehaviour
     void PlayerAction()
     {
         state = BattleState.PlayerAction;
+
         StartCoroutine(dialogueBox.TypeDialogue("Choose an action"));
+
         dialogueBox.EnableActionSelector(true);
     }
 
     void PlayerAbility()
     {
         state = BattleState.PlayerAbility;
+
         dialogueBox.EnableActionSelector(false);
         dialogueBox.EnableDialogueText(false);
         dialogueBox.EnableAbilitySelector(true);
+    }
+
+    // This coroutine is called when player selects an ability
+    IEnumerator PerformPlayerAbility()
+    {
+        // Switches state from PlayerAbility to Busy so that player can't change current ability while it is being executed
+        state = BattleState.Busy;  
+
+        var ability = playerUnit.Player.Abilities[currentAbility];
+
+        yield return dialogueBox.TypeDialogue($"{playerUnit.Player.Base.Name} used {ability.Base.Name}!");
+        yield return new WaitForSeconds(1f);
+
+        bool isDefeated = enemyUnit.Player.TakeDamage(ability, playerUnit.Player);
+
+        yield return enemyHud.UpdateHP(enemyUnit.Player);
+
+        if (isDefeated)
+        {
+            yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} has been vanquished!");
+        }
+        else
+        {
+            StartCoroutine(EnemyTurn()); // Passes turn over to the enemy if they still have HP
+        }
+    }
+
+    // Coroutine that handles enemy actions
+    IEnumerator EnemyTurn()
+    {
+        state = BattleState.EnemyTurn;
+
+        var ability = enemyUnit.Player.GetRandomAbility();
+
+        yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} used {ability.Base.Name}!");
+        yield return new WaitForSeconds(1f);
+
+        bool isDefeated = playerUnit.Player.TakeDamage(ability, enemyUnit.Player);
+
+        yield return playerHud.UpdateHP(playerUnit.Player);
+
+        if (isDefeated)
+        {
+            yield return dialogueBox.TypeDialogue($"{playerUnit.Player.Base.Name} has been vanquished!");
+        }
+        else
+        {
+            PlayerAction(); // Passes turn back to the player if they still have HP
+        }
     }
 
     // Update the scene based on BattleState changes
@@ -144,6 +197,13 @@ public class BattleSystem : MonoBehaviour
 
         dialogueBox.UpdateAbilitySelection(currentAbility, playerUnit.Player.Abilities[currentAbility]);
 
+        // Executes the selected ability when player presses 'z'
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            dialogueBox.EnableAbilitySelector(false);
+            dialogueBox.EnableDialogueText(true);
 
+            StartCoroutine(PerformPlayerAbility());
+        }
     }
 }

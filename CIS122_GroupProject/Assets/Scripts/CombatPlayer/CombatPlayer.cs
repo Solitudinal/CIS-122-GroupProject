@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 // This script is for constructing a main character game object that is used exclusively in combat
 public class CombatPlayer
@@ -62,5 +63,30 @@ public class CombatPlayer
     public int MaxHp
     {
         get { return Mathf.FloorToInt((Base.MaxHp * Level) / 100f) + 10; } // Note that HP adds by 10 rather than 5
+    }
+
+    // This method uses a formula that determines the amount of damage inflicted by a given ability
+    // Return value is used to determine whether or not player/enemy has died after calculating damage
+    public bool TakeDamage(Ability ability, CombatPlayer attacker)
+    {
+        float modifiers = UnityEngine.Random.Range(0.85f, 1f); // Keeps combat more interesting by introducing some randomness to damage values
+        float a = (2 * attacker.Level + 10) / 250f;
+        float d = a * ability.Base.Power * ((float)attacker.Attack / Defense) + 2;
+        int damage = Mathf.FloorToInt(d * modifiers);
+
+        HP -= damage;
+        if (HP <= 0)
+        {
+            HP = 0; // Prevents negative HP from being shown in the UI
+            return true;
+        }
+
+        return false;
+    }
+
+    public Ability GetRandomAbility()
+    {
+        int r = UnityEngine.Random.Range(0, Abilities.Count - 1);
+        return Abilities[r];
     }
 }

@@ -3,10 +3,11 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-// This script assigns the appropriate sprite in the combat scene for either players or enemies
+// TODO : Explanation of script purpose 
 public class BattleUnit : MonoBehaviour
 {
     [SerializeField] CombatPlayerBase theBase;
@@ -19,7 +20,7 @@ public class BattleUnit : MonoBehaviour
     {
         Player = new CombatPlayer(theBase, level);
 
-        
+        // Assigns the appropriate sprite in the combat scene for either players or enemies
         if (isPlayerUnit)
         {
             GetComponent<Image>().sprite = Player.Base.BackSprite;
