@@ -75,9 +75,11 @@ public class CombatPlayer
         int damage = Mathf.FloorToInt(d * modifiers);
 
         HP -= damage;
+
         if (HP <= 0)
         {
             HP = 0; // Prevents negative HP from being shown in the UI
+
             return true;
         }
 
@@ -87,6 +89,7 @@ public class CombatPlayer
     public Ability GetRandomAbility()
     {
         int r = UnityEngine.Random.Range(0, Abilities.Count - 1);
+
         return Abilities[r];
     }
 }

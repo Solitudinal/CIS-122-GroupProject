@@ -36,6 +36,7 @@ public class BattleDialogueBox : MonoBehaviour
         foreach (var letter in dialogue)
         {
             dialogueText.text += letter;
+
             yield return new WaitForSeconds(1f/lettersPerSecond); // Waits for specified time between adding each letter
         }
     }
