@@ -88,7 +88,7 @@ public class CombatPlayer
 
     public Ability GetRandomAbility()
     {
-        int r = UnityEngine.Random.Range(0, Abilities.Count - 1);
+        int r = UnityEngine.Random.Range(0, Abilities.Count);
 
         return Abilities[r];
     }

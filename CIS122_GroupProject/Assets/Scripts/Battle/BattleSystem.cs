@@ -70,6 +70,9 @@ public class BattleSystem : MonoBehaviour
         var ability = playerUnit.Player.Abilities[currentAbility];
 
         yield return dialogueBox.TypeDialogue($"{playerUnit.Player.Base.Name} used {ability.Base.Name}!");
+
+        playerUnit.PlayAttackAnimation();
+
         yield return new WaitForSeconds(1f);
 
         bool isDefeated = enemyUnit.Player.TakeDamage(ability, playerUnit.Player);
@@ -94,6 +97,9 @@ public class BattleSystem : MonoBehaviour
         var ability = enemyUnit.Player.GetRandomAbility();
 
         yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} used {ability.Base.Name}!");
+
+        enemyUnit.PlayAttackAnimation();
+
         yield return new WaitForSeconds(1f);
 
         bool isDefeated = playerUnit.Player.TakeDamage(ability, enemyUnit.Player);

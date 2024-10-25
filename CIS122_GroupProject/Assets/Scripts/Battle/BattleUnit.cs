@@ -41,11 +41,11 @@ public class BattleUnit : MonoBehaviour
             image.sprite = Player.Base.FrontSprite;
         }
 
-        PlayerEnterAnimation();
+        PlayEnterAnimation();
     }
 
     // Method for animation of player/enemy sprites at the start of combat
-    public void PlayerEnterAnimation()
+    public void PlayEnterAnimation()
     {
         // Sets player and enemy 500 x-units away from their original position
         if (isPlayerUnit)
@@ -60,5 +60,25 @@ public class BattleUnit : MonoBehaviour
         // Moves player/enemy back to original position. 
         // 1f sets length of animation.
         image.transform.DOLocalMove(originalPosition, 1f); 
+    }
+
+    // Method for animation of player/enemy sprites when executing attacks
+    public void PlayAttackAnimation()
+    {
+        // Sequence() enables playing multiple animations sequentially
+        var sequence = DOTween.Sequence();
+
+        // A movement of 50 x-units to the right or left is appended to the first part of sequence
+        if (isPlayerUnit)
+        {
+            sequence.Append(image.transform.DOLocalMoveX(originalPosition.x + 50f, 0.25f));
+        }
+        else
+        {
+            sequence.Append(image.transform.DOLocalMoveX(originalPosition.x - 50f, 0.25f));
+        }
+
+        // A return to the original position is appended to the second and final part of animation sequence
+        sequence.Append(image.transform.DOLocalMoveX(originalPosition.x, 0.25f));
     }
 }
