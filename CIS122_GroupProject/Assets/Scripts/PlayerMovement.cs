@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private int speed = 5;
-    [SerializeField] private float encounterRate = 0.10f;  // 10% chance of encounter per movement
+    [SerializeField] private float encounterRate = 0.05f;  // 10% chance of encounter per movement
     // This will store whether the player is in an encounter zone
     private bool isInEncounterZone = false;
 
