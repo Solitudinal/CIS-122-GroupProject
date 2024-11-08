@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,13 +15,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     private Animator animator;
-    public VectorValue startingPosition;
+    // Static variable to store the previous scene name
+    public static string previousSceneName;
 
+    //public VectorValue startingPosition;
 
+    /*
     private void Start()
     {
         transform.position = startingPosition.initialValue;
     }
+    */
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -80,6 +85,19 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Random encounter triggered!");
         // Example: BattleManager.Instance.StartBattle();
+        // Save the current scene name before switching
+        previousSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("Combat");
+    }
+
+
+    // This method can be called from the Battle Scene to return to the previous scene
+    public static void ReturnToPreviousScene()
+    {
+        if (!string.IsNullOrEmpty(previousSceneName))
+        {
+            SceneManager.LoadScene(previousSceneName);
+        }
     }
 
     // This method will be called when the player enters a collider with an "EncounterZone" tag
