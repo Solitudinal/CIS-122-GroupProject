@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
      
      1. Create a 2D collider (e.g., BoxCollider2D) in scene for each encounter area.
      
-     2.Set the collider to be a trigger by checking the “Is Trigger” option in the Collider2D component.
+     2.Set the collider to be a trigger by checking the ï¿½Is Triggerï¿½ option in the Collider2D component.
 
       3.Tag the colliders with "EncounterZone".
 
