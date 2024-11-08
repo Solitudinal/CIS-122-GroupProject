@@ -7,7 +7,7 @@ using UnityEngine;
 
 public enum BattleState { Start, PlayerAction, PlayerAbility, EnemyTurn, Busy}
 
-// This script sets up the battle scene using information from both the player and enemy unit objects
+// This script sets up the battle scene and handles the turn-based logic
 public class BattleSystem : MonoBehaviour
 {
     [SerializeField] BattleUnit playerUnit;
@@ -26,6 +26,7 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    // Coroutine sets up the battle scene by fetching data about both player and enemy
     public IEnumerator SetupBattle()
     {
         playerUnit.Setup();
@@ -36,8 +37,19 @@ public class BattleSystem : MonoBehaviour
 
         dialogueBox.SetAbilityNames(playerUnit.Player.Abilities);
 
-        yield return dialogueBox.TypeDialogue($"A wild {enemyUnit.Player.Base.Name} appeared!");
-        yield return new WaitForSeconds(1f);
+        // Handles opening dialogue in combat 
+        // TODO: Create a boss tag to trigger boss dialogue rather than checking for specific names
+        if (enemyUnit.Player.Base.Name == "Bio Prof")
+        {
+            yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} appears to be possessed by a malevolent force!");
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            yield return dialogueBox.TypeDialogue($"A wild {enemyUnit.Player.Base.Name} appeared!");
+            yield return new WaitForSeconds(1f);
+        }
+
 
         PlayerAction();
     }

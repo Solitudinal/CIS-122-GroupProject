@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
-// This script is for constructing a main character game object that is used exclusively in combat
+// This script is for constructing player and enemy game objects that are used exclusively in combat
 public class CombatPlayer
 {
-    // Attributes for combat version of main character
+    // Attributes/stats and abilities for player and enemy
     public CombatPlayerBase Base {  get; set; }
     public int Level { get; set; }
     public int HP { get; set; }

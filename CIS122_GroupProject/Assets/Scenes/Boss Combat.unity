@@ -588,8 +588,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5248238f663fd349b676a5982df944b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theBase: {fileID: 11400000, guid: 3c562951bf81a694d99e5249e728747d, type: 2}
-  level: 5
+  theBase: {fileID: 11400000, guid: fdf7324e8dc3a134faa844bb2a6494b0, type: 2}
+  level: 8
   isPlayerUnit: 0
 --- !u!1 &339364234
 GameObject:

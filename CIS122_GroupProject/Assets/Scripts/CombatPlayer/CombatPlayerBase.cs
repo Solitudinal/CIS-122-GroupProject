@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO.Enumeration;
 using UnityEngine;
 
-// Allows easy creation of Player objects from Project window
+// Allows easy creation of player/enemy combat objects from Project window
 [CreateAssetMenu(fileName = "Player", menuName = "Player/Create new player")]
 
 // Inheriting from ScriptableObject allows this script to be used independently from game objects
@@ -20,7 +20,7 @@ public class CombatPlayerBase : ScriptableObject
     [SerializeField] Sprite backSprite;
     [SerializeField] Sprite frontSprite;
 
-    // Stores information about which department-specific powers player should have
+    // Stores information about which department-specific powers player/enemies should have
     [SerializeField] PlayerForm form;
 
     // Base Stats
@@ -94,7 +94,7 @@ public class CombatPlayerBase : ScriptableObject
         get { return this.learnableAbilities; }
     }
 
-    // Class for abilities that player gains at specific levels
+    // Class for abilities that player/enemies gain at specific levels
     [System.Serializable]
     public class LearnableAbility
     {
@@ -112,7 +112,7 @@ public class CombatPlayerBase : ScriptableObject
         }
     }
 
-    // Enum stores references to department-specific powers that player has earned
+    // Enum stores references to department-specific powers that player/enemies have access to
     public enum PlayerForm
     {
     None,

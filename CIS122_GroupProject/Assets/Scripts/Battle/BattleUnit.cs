@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening; 
 
-// TODO : Explanation of script purpose 
+
 public class BattleUnit : MonoBehaviour
 {
     [SerializeField] CombatPlayerBase theBase;
