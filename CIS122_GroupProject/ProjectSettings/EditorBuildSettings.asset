@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Office v2.unity
     guid: 7692600d4d4ab49428274144e61e3f14
+  - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: 6928728bfe567bd41bad047dd56b1932
   m_configObjects: {}
