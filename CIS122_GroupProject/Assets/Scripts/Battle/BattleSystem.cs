@@ -42,6 +42,13 @@ public class BattleSystem : MonoBehaviour
         PlayerAction();
     }
 
+    void EndBattle()
+    {
+        // ends the battle and returns to the prevoius scene
+        PlayerMovement.ReturnToPreviousScene();
+    }
+
+
     // Methods that change BattleState and update battle text appropriately
     void PlayerAction()
     {
@@ -82,6 +89,7 @@ public class BattleSystem : MonoBehaviour
         {
             yield return dialogueBox.TypeDialogue($"{enemyUnit.Player.Base.Name} has been vanquished!");
             enemyUnit.PlayDefeatAnimation();
+            EndBattle(); // Ends the battle if the enemy is defeated
         }
         else
         {
@@ -109,6 +117,7 @@ public class BattleSystem : MonoBehaviour
         {
             yield return dialogueBox.TypeDialogue($"{playerUnit.Player.Base.Name} has been vanquished!");
             playerUnit.PlayDefeatAnimation();
+            EndBattle(); // Ends the battle if the player is defeated
         }
         else
         {
