@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b18f483b0fe9c8342a419741ecf69797, type: 3}
-  m_Name: Male MC
+  m_Name: Shark Guy
   m_EditorClassIdentifier: 
-  name: Male MC
+  name: Shark Guy
   description: 
   backSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  frontSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  frontSprite: {fileID: 21300000, guid: 28045a914d747164780d6a677d31c303, type: 3}
   form: 0
   maxHp: 45
   attack: 49
