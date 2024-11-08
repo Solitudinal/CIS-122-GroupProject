@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:CIS122_GroupProject/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
 guid: 1b8d251f9af63b746bf2f7ffe00ebb9b
+========
+guid: 7407554dd5989de4b83381368841257a
+>>>>>>>> TileMapAssets:CIS122_GroupProject/Assets/Scenes/Combat.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
