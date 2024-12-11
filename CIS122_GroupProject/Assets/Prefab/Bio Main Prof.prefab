@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5052135111941626166}
   - component: {fileID: 759954566404584165}
   - component: {fileID: 8581404743997957976}
+  - component: {fileID: -7249007775654608812}
   m_Layer: 0
   m_Name: Bio Main Prof
   m_TagString: Untagged
@@ -194,3 +195,15 @@ CircleCollider2D:
   m_Offset: {x: -0.83485746, y: 0}
   serializedVersion: 2
   m_Radius: 2.3973575
+--- !u!114 &-7249007775654608812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5594337868656963379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e1ef1b2f7e97e46b1ee436461a6f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
