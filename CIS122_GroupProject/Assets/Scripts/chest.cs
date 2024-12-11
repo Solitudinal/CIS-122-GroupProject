@@ -8,7 +8,8 @@ public class Chest : MonoBehaviour
 
     private Animator animator;
     private bool playerInRange = false; // Tracks if player is in range
-    [SerializeField] AudioSource openChestSound; // Add this field for the sound effect
+
+    [SerializeField] AudioSource openChestSound; 
 
     void Start()
     {
