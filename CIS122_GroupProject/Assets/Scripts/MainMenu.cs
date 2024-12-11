@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("hallway scene");
     }
 
+    public void Info()
+    {
+        SceneManager.LoadScene("info scene");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
