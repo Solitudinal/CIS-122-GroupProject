@@ -49,12 +49,16 @@ public class CSE_CameraPan : CutsceneElementBase
 
         vCam.transform.position = targetPosition; // Ensure the camera reaches the exact target position
 
+        // Signal the cutscene handler to proceed to the next element
+        cutsceneHandler.PlayNextElement();
+
+
         // Wait for the player to start moving before resuming camera follow
-        StartCoroutine(CheckPlayerMovement());
+        yield return StartCoroutine(WaitForPlayerMovement());
 
     }
 
-    private IEnumerator CheckPlayerMovement()
+    private IEnumerator WaitForPlayerMovement()
     {
         while (true)
         {
