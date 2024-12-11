@@ -8,6 +8,7 @@ public class Chest : MonoBehaviour
 
     private Animator animator;
     private bool playerInRange = false; // Tracks if player is in range
+    [SerializeField] AudioSource openChestSound; // Add this field for the sound effect
 
     void Start()
     {
@@ -20,6 +21,12 @@ public class Chest : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             animator.SetBool("Open", true); // Open the chest
+
+            // Play the sound effect for opening the chest
+            if (openChestSound != null && !openChestSound.isPlaying)
+            {
+                openChestSound.Play();
+            }
         }
     }
 
@@ -39,6 +46,4 @@ public class Chest : MonoBehaviour
             animator.SetBool("Open", false); // Close the chest
         }
     }
-
-
 }
