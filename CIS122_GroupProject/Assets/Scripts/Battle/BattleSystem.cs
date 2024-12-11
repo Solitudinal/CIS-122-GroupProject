@@ -16,6 +16,9 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHUD enemyHud;
     [SerializeField] BattleDialogueBox dialogueBox;
 
+    [SerializeField] AudioSource cycleSound; // Sound for cycling through options
+    [SerializeField] AudioSource selectSound; // Sound for pressing 'Z'
+
     BattleState state;
 
     int currentAction;
@@ -56,7 +59,7 @@ public class BattleSystem : MonoBehaviour
 
     void EndBattle()
     {
-        // ends the battle and returns to the prevoius scene
+        // Ends the battle and returns to the previous scene
         PlayerMovement.ReturnToPreviousScene();
     }
 
@@ -159,6 +162,7 @@ public class BattleSystem : MonoBehaviour
             if (currentAction < 1)
             {
                 currentAction++;
+                cycleSound.Play(); 
             }
         }
         // If user presses up arrow when bottom option is highlighted, game highlights top action
@@ -167,6 +171,7 @@ public class BattleSystem : MonoBehaviour
             if (currentAction > 0)
             {
                 currentAction--;
+                cycleSound.Play();
             }
         }
 
@@ -176,6 +181,7 @@ public class BattleSystem : MonoBehaviour
         // When user presses Z, switches BattleState based on action selection
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            selectSound.Play(); 
             if (currentAction == 0)
             {
                 // Fight
@@ -197,6 +203,7 @@ public class BattleSystem : MonoBehaviour
             if (currentAbility < playerUnit.Player.Abilities.Count - 1)
             {
                 currentAbility++;
+                cycleSound.Play(); 
             }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -204,14 +211,15 @@ public class BattleSystem : MonoBehaviour
             if (currentAbility > 0)
             {
                 currentAbility--;
+                cycleSound.Play(); 
             }
         }
-        // Up and down arrows cycle through abilities as well
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (currentAbility < playerUnit.Player.Abilities.Count - 2)
             {
                 currentAbility += 2;
+                cycleSound.Play(); 
             }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -219,6 +227,7 @@ public class BattleSystem : MonoBehaviour
             if (currentAbility > 1)
             {
                 currentAbility -= 2;
+                cycleSound.Play(); 
             }
         }
 
@@ -227,6 +236,7 @@ public class BattleSystem : MonoBehaviour
         // Executes the selected ability when player presses 'z'
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            selectSound.Play(); 
             dialogueBox.EnableAbilitySelector(false);
             dialogueBox.EnableDialogueText(true);
 
