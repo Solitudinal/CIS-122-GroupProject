@@ -220,10 +220,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1845805092}
-  - {fileID: 1753327038}
-  - {fileID: 1380746881}
   - {fileID: 483560068}
+  - {fileID: 1753327038}
   - {fileID: 473585716}
+  - {fileID: 1380746881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415858894
@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: playerStorage
       value: 
       objectReference: {fileID: 11400000, guid: aa5afafacda8a3c4b969d82b1dca141a, type: 2}
+    - target: {fileID: 1250538900254967013, guid: ab2554106a5939e4b8ea1e3c534dca8c, type: 3}
+      propertyPath: playerPosition.x
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: 3699443742934650258, guid: ab2554106a5939e4b8ea1e3c534dca8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.748443
@@ -932,7 +936,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9038398387035138746, guid: 084b62e77bb0e1343aff6bcf5cb13dc3, type: 3}
   m_PrefabInstance: {fileID: 7664480158735500123}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &715084154
+--- !u!43 &587528474
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
