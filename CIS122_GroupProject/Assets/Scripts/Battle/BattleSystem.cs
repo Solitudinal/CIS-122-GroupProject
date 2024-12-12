@@ -1,7 +1,7 @@
 // Written by Philip Jacobson
 // 10/12/2024
 
-//Written by Niloy Sarker Bappy
+// Some additions by Niloy Sarker Bappy (scene transition at end of combat)
 
 
 using System.Collections;
