@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+
+
+//written by Niloy Sarker Bappy
+
 public class CSE_CameraPan : CutsceneElementBase
 {
 

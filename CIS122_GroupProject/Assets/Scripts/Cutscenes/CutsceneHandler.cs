@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+//written by Niloy Sarker Bappy
 
 public class CutsceneHandler : MonoBehaviour
 {
