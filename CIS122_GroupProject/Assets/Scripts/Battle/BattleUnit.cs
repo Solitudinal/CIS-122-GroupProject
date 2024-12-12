@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening; 
 
-
+// This script handles the visuals for player and enemy units in combat as well as all combat animations
 public class BattleUnit : MonoBehaviour
 {
     [SerializeField] CombatPlayerBase theBase;

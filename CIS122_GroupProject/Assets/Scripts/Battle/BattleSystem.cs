@@ -7,7 +7,7 @@ using UnityEngine;
 
 public enum BattleState { Start, PlayerAction, PlayerAbility, EnemyTurn, Busy}
 
-// This script sets up the battle scene and handles the turn-based logic
+// This script manages the turn-based combat logic
 public class BattleSystem : MonoBehaviour
 {
     [SerializeField] BattleUnit playerUnit;
@@ -74,6 +74,7 @@ public class BattleSystem : MonoBehaviour
         dialogueBox.EnableActionSelector(true);
     }
 
+    // Method that updates HUD to show available abilities the player can select
     void PlayerAbility()
     {
         state = BattleState.PlayerAbility;

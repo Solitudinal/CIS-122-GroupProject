@@ -9,8 +9,9 @@ using UnityEngine;
 // Allows easy creation of player/enemy combat objects from Project window
 [CreateAssetMenu(fileName = "Player", menuName = "Player/Create new player")]
 
-// Inheriting from ScriptableObject allows this script to be used independently from game objects
-public class CombatPlayerBase : ScriptableObject
+// This script stores data about player and enemy objects, such as stats or their name
+// TODO: Implement feature where player aquires department-themed abilities upon defeating professor bosses
+public class CombatPlayerBase : ScriptableObject // Inheriting from ScriptableObject allows this script to be used independently from game objects
 {
     [SerializeField] string name;
 

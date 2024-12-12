@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This script contains data for specific abilities
+// TODO: Implement SP-cost mechanic for abilities
 public class Ability
 {
     public AbilityBase Base { get; set; }

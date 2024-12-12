@@ -10,9 +10,9 @@ using static CombatPlayerBase;
 [CreateAssetMenu(fileName = "Ability", menuName = "Player/Create new ability")]
 
 // This script handles information and stats about the various special moves the player has access to
+// TODO: Implement SP-cost mechanic for abilities
 public class AbilityBase : ScriptableObject
 {
-    // Private variables that refer to aspects of various character abilities
     [SerializeField] string name;
 
     [TextArea]
