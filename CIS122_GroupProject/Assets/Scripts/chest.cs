@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using TMPro;
 using UnityEngine;
+
+
+// written by Niloy Sarker Bappy
+//written by Philip Jacobson
 
 public class Chest : MonoBehaviour
 {

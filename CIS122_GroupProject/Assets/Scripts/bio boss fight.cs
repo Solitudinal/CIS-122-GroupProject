@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+//written by Niloy Sarker Bappy
+
 public class NPCBattleTrigger : MonoBehaviour
 {
     private bool isPlayerInRange = false;
