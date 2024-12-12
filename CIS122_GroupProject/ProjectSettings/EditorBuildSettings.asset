@@ -5,7 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/hallway scene.unity
+    guid: 0451a756bc5fdb7489a973c3f599eb59
+  - enabled: 1
+    path: Assets/Scenes/bio classroom 1.unity
+    guid: e2d137b46e1b12e4d87952d5f29cbc3b
+  - enabled: 1
+    path: Assets/Scenes/Office.unity
+    guid: fac32f7d5be372c41aaa2705ef9e0f62
+  - enabled: 1
+    path: Assets/Scenes/Office v2.unity
+    guid: 7692600d4d4ab49428274144e61e3f14
+  - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: 6928728bfe567bd41bad047dd56b1932
+  - enabled: 1
+    path: Assets/Scenes/Combat.unity
+    guid: 2d6df609330763c4c85e8ae5b822ad48
+  - enabled: 1
+    path: Assets/Scenes/Boss Room.unity
+    guid: dcff7560a07dc664e8dc85ee18cef4e5
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 87f6709972fe14344b8a03b4cbc113cd
+  - enabled: 1
+    path: Assets/Scenes/Game Mechanics/info scene.unity
+    guid: 412eb5dd760a7fb47a9bcc37765b9728
+  - enabled: 1
+    path: Assets/Scenes/Boss Combat.unity
+    guid: 1da2b9ca138bacd46a0333898dd217f8
   m_configObjects: {}

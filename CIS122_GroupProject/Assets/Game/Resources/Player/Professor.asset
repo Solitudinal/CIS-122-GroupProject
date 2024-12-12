@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f483b0fe9c8342a419741ecf69797, type: 3}
+  m_Name: Professor
+  m_EditorClassIdentifier: 
+  name: Bio Prof
+  description: 
+  backSprite: {fileID: 0}
+  frontSprite: {fileID: 21300000, guid: e7ab86d321b7d204fbeb43f5ce8d0a5a, type: 3}
+  form: 0
+  maxHp: 45
+  attack: 49
+  defense: 49
+  spAttack: 65
+  spDefense: 65
+  speed: 0
+  learnableAbilities:
+  - abilityBase: {fileID: 11400000, guid: 39fae81acf749f44b8bb7894480297a5, type: 2}
+    level: 3
+  - abilityBase: {fileID: 11400000, guid: 0d3955f681549024191f96909d578be9, type: 2}
+    level: 7

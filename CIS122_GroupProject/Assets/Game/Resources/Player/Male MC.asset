@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f483b0fe9c8342a419741ecf69797, type: 3}
+  m_Name: Male MC
+  m_EditorClassIdentifier: 
+  name: Male MC
+  description: 
+  backSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  frontSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  form: 0
+  maxHp: 45
+  attack: 49
+  defense: 49
+  spAttack: 65
+  spDefense: 65
+  speed: 0
+  learnableAbilities:
+  - abilityBase: {fileID: 11400000, guid: 39fae81acf749f44b8bb7894480297a5, type: 2}
+    level: 1
+  - abilityBase: {fileID: 11400000, guid: 028f6ccb78acd0042946f9710357def3, type: 2}
+    level: 4
+  - abilityBase: {fileID: 11400000, guid: 05d3476cd45688c40b4bb75d1c8a9744, type: 2}
+    level: 7
